@@ -15,10 +15,10 @@
   }
 
   interface MovieOptions {
-    title: string
+    cast: string[]
     description: string
     rating: number
-    cast: string[]
+    title: string
   }
   // Crear una película
   function createMovie(options: MovieOptions) {
