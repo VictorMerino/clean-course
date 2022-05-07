@@ -25,14 +25,18 @@
     console.log(options)
   }
 
+  interface Actor {
+    fullName: string
+    birthDate: Date
+  }
   // Crea un nuevo actor
-  function createActor(fullName: string, birthDate: Date): boolean {
+  function createActor(personalData: Actor): Actor | boolean {
     // tarea asincrona para verificar nombre
     // ..
     // ..
-    if (fullName === 'fernando') return false
+    if (personalData.fullName === 'fernando') return false
 
     console.log('Crear actor')
-    return true
+    return personalData
   }
 })()
