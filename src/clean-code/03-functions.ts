@@ -14,14 +14,14 @@
     console.log({ id })
   }
 
-  interface MovieOptions {
+  interface Movie {
     cast: string[]
     description: string
     rating: number
     title: string
   }
   // Crear una película
-  function createMovie(options: MovieOptions) {
+  function createMovie(options: Movie) {
     console.log(options)
   }
 
