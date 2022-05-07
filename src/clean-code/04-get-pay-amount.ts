@@ -2,8 +2,7 @@ const getPayAmount = ({
   isDead = false,
   isSeparated = true,
   isRetired = false
-}) => {
-  let result: number
+}): number => {
   if (isDead) {
     return 1500
   }
