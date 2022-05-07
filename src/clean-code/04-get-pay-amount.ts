@@ -3,7 +3,7 @@ const getPayAmount = ({
   isSeparated = true,
   isRetired = false
 }) => {
-  let result
+  let result: number
   if (isDead) {
     result = 1500
   } else {
