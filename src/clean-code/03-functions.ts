@@ -14,14 +14,15 @@
     console.log({ id })
   }
 
-  // Crear una película
-  function createMovie(
-    title: string,
-    description: string,
-    rating: number,
+  interface MovieOptions {
+    title: string
+    description: string
+    rating: number
     cast: string[]
-  ) {
-    console.log({ title, description, rating, cast })
+  }
+  // Crear una película
+  function createMovie(options: MovieOptions) {
+    console.log(options)
   }
 
   // Crea un nuevo actor
