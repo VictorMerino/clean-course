@@ -22,6 +22,10 @@
       birthDate: Date
     ) {
       super(name, gender, birthDate)
+      this.lastAccess = new Date()
+    }
+    checkCredentials() {
+      return true
     }
   }
 
@@ -34,4 +38,35 @@
     new Date(1990, 0, 20)
   )
   console.log(newUser)
+
+  class UserSettings extends User {
+    constructor(
+      public workingDirectory: string,
+      public lastOpenFolder: string,
+      email: string,
+      role: string,
+      lastAccess: Date,
+      name: string,
+      gender: Gender,
+      birthDate: Date
+    ) {
+      super(email, role, lastAccess, name, gender, birthDate)
+    }
+  }
+
+  const userSettings = new UserSettings(
+    '/usr/home',
+    'home',
+    'email@email.com',
+    'admin',
+    new Date(),
+    'Victor',
+    'M',
+    new Date(1990, 0, 20)
+  )
+
+  console.log({
+    userSettings,
+    areCredentialsValid: userSettings.checkCredentials()
+  })
 })()
