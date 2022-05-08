@@ -2,6 +2,7 @@
   // Resolver sin la triple condicional dentro del if
   // includes? arrays?
   function isRedFruit(fruit: string): boolean {
+    // Array not make as a a constant as they are only three values and in one line can be easily read
     return ['manzana', 'cereza', 'ciruela'].includes(fruit)
   }
 
