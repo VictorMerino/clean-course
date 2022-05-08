@@ -32,9 +32,10 @@
     public type: HtmlType
     constructor(value: string, placeholder: string, id: string) {
       const inputAttrs = new InputAttributes(value, placeholder)
+      const htmlAttrs = new HtmlElement(id, 'input')
+
       this.placeholder = inputAttrs.placeholder
       this.value = inputAttrs.value
-      const htmlAttrs = new HtmlElement(id, 'input')
       this.id = htmlAttrs.id
       this.type = htmlAttrs.type
     }
