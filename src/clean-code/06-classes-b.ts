@@ -40,8 +40,6 @@
       this.email = email
       this.role = role
       this.lastAccess = lastAccess
-
-      this.lastAccess = new Date()
     }
     checkCredentials() {
       return true
