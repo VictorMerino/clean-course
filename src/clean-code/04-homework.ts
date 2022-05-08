@@ -31,10 +31,11 @@
     Fourth = 'Fourth'
   }
   function workingSteps() {
-    if (!isFirstStepWorking) return `${StepsByNumber.First} step broken.`
-    if (!isSecondStepWorking) return `${StepsByNumber.Second} step broken.`
-    if (!isThirdStepWorking) return `${StepsByNumber.Third} step broken.`
-    if (!isFourthStepWorking) return `${StepsByNumber.Fourth} step broken.`
+    const endOfPhrase = 'step broken.'
+    if (!isFirstStepWorking) return `${StepsByNumber.First} ${endOfPhrase}`
+    if (!isSecondStepWorking) return `${StepsByNumber.Second} ${endOfPhrase}`
+    if (!isThirdStepWorking) return `${StepsByNumber.Third} ${endOfPhrase}`
+    if (!isFourthStepWorking) return `${StepsByNumber.Fourth} ${endOfPhrase}`
 
     return 'Working properly'
   }
