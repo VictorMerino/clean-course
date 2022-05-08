@@ -7,6 +7,7 @@
     birthDate: Date
   }
 
+  // Person class is already fine: no need to refactor
   class Person {
     public name: string
     public gender: Gender
