@@ -30,6 +30,7 @@
     email: string
     role: string
     lastAccess: Date
+    checkCredentials?: Function
   }
   class User extends Person {
     public email: string
@@ -57,34 +58,34 @@
   const newUser: UserProperties = new User(userProperties)
   console.log(newUser)
 
-  /*class UserSettings extends User {
-    constructor(
-      public workingDirectory: string,
-      public lastOpenFolder: string,
-      email: string,
-      role: string,
-      lastAccess: Date,
-      name: string,
-      gender: Gender,
-      birthDate: Date
-    ) {
-      super(email, role, lastAccess, name, gender, birthDate)
+  interface UserSettingsProperties extends UserProperties {
+    workingDirectory: string
+    lastOpenFolder: string
+  }
+  class UserSettings extends User {
+    public workingDirectory: string
+    public lastOpenFolder: string
+    constructor({ workingDirectory, lastOpenFolder }: UserSettingsProperties) {
+      super(userProperties)
+      this.workingDirectory = workingDirectory
+      this.lastOpenFolder = lastOpenFolder
     }
   }
 
-  const userSettings = new UserSettings(
-    '/usr/home',
-    'home',
-    'email@email.com',
-    'admin',
-    new Date(),
-    'Victor',
-    'M',
-    new Date(1990, 0, 20)
-  )
+  const userSettings: UserSettingsProperties = {
+    workingDirectory: '/usr/home',
+    lastOpenFolder: 'home',
+    name: 'Victor',
+    gender: 'M',
+    birthDate: new Date(1990, 0, 20),
+    email: 'email@email.com',
+    role: 'Boss',
+    lastAccess: new Date(Date.now()),
+    checkCredentials: () => {}
+  }
 
   console.log({
     userSettings,
-    areCredentialsValid: userSettings.checkCredentials()
-  })*/
+    areCredentialsValid: () => {}
+  })
 })()
