@@ -8,7 +8,9 @@
 
   // Simplificar esta función
   // switch? Object literal? validar posibles colores
-  function getFruitsByColor(color: string): string[] {
+  type FruitColor = 'red' | 'yellow' | 'purple'
+
+  function getFruitsByColor(color: FruitColor): string[] {
     const fruitsByColor = {
       red: ['manzana', 'fresa'],
       yellow: ['piña', 'banana'],
