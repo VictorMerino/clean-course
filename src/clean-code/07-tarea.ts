@@ -28,10 +28,12 @@
     public value: string
     public type: HtmlType
     constructor(value: string, placeholder: string, id: string) {
-      this.type = 'input'
-      this.value = value
-      this.placeholder = placeholder
-      this.id = id
+      const inputAttrs = new InputAttributes(value, placeholder)
+      this.placeholder = inputAttrs.placeholder
+      this.value = inputAttrs.value
+      const htmlAttrs = new HtmlElement(id, 'input')
+      this.id = htmlAttrs.id
+      this.type = htmlAttrs.type
     }
   }
   // const nameField = new InputEvents('Fernando', 'Enter first name', 'txtName')
