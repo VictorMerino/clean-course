@@ -61,7 +61,7 @@
     workingDirectory: string
     lastOpenFolder: string
   }
-  class UserSettings {
+  class Settings {
     public workingDirectory: string
     public lastOpenFolder: string
 
