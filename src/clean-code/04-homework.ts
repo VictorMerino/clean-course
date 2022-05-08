@@ -25,23 +25,13 @@
   let isFourthStepWorking = true
 
   function workingSteps() {
-    if (isFirstStepWorking === true) {
-      if (isSecondStepWorking === true) {
-        if (isThirdStepWorking === true) {
-          if (isFourthStepWorking === true) {
-            return 'Working properly!'
-          } else {
-            return 'Fourth step broken.'
-          }
-        } else {
-          return 'Third step broken.'
-        }
-      } else {
-        return 'Second step broken.'
-      }
-    } else {
-      return 'First step broken.'
-    }
+    // let messageToReturn = ``
+    if (!isFirstStepWorking) return 'First step broken.'
+    if (!isSecondStepWorking) return 'Second step broken.'
+    if (!isThirdStepWorking) return 'Third step broken.'
+    if (!isFourthStepWorking) return 'Fourth step broken.'
+
+    return 'Working properly!'
   }
 
   // isRedFruit
@@ -52,7 +42,7 @@
   console.log({ redFruits: getFruitsByColor('red') }) // ['manzana', 'fresa']
   console.log({ yellowFruits: getFruitsByColor('yellow') }) // ['piña', 'banana']
   console.log({ purpleFruits: getFruitsByColor('purple') }) // ['moras', 'uvas']
-  // console.log({ pinkFruits: getFruitsByColor('pink') }); // Error: the color must be: red, yellow, purple
+  console.log({ pinkFruits: getFruitsByColor('pink') }) // Error: the color must be: red, yellow, purple
 
   // workingSteps
   console.log({ workingSteps: workingSteps() }) // Cambiar los valores de la línea 31 y esperar los resultados
