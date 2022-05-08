@@ -10,13 +10,14 @@
   function getFruitsByColor(color: string): string[] {
     if (color === 'red') {
       return ['manzana', 'fresa']
-    } else if (color === 'yellow') {
-      return ['piña', 'banana']
-    } else if (color === 'purple') {
-      return ['moras', 'uvas']
-    } else {
-      throw Error('the color must be: red, yellow, purple')
     }
+    if (color === 'yellow') {
+      return ['piña', 'banana']
+    }
+    if (color === 'purple') {
+      return ['moras', 'uvas']
+    }
+    throw Error('the color must be: red, yellow, purple')
   }
 
   // Simplificar esta función
