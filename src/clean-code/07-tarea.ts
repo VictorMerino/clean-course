@@ -41,7 +41,7 @@
     }
 
     setFocus(): void {
-      console.log('setFocus')
+      console.log('setFocus to input with id: ' + this.id)
     }
     getValue(): void {
       console.log('getValue')
