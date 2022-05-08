@@ -18,23 +18,29 @@
     }
   }
 
-  const newPerson = new Person({
+  const personProperties: PersonProperties = {
     name: 'Victor',
     gender: 'M',
     birthDate: new Date(1990, 0, 20)
-  }) // 20 de Enero de 1990
+  }
+  const newPerson = new Person(personProperties) // 20 de Enero de 1990
   console.log(newPerson)
 
+  interface UserProperties extends Person {
+    email: string
+    role: string
+    lastAccess: Date
+  }
   class User extends Person {
-    constructor(
-      public email: string,
-      public role: string,
-      public lastAccess: Date,
-      name: string,
-      gender: Gender,
-      birthDate: Date
-    ) {
-      super(name, gender, birthDate)
+    public email: string
+    public role: string
+    public lastAccess: Date
+    constructor({ email, role, lastAccess }: UserProperties) {
+      super(personProperties)
+      this.email = email
+      this.role = role
+      this.lastAccess = lastAccess
+
       this.lastAccess = new Date()
     }
     checkCredentials() {
@@ -42,14 +48,15 @@
     }
   }
 
-  const newUser = new User(
-    'email@email.com',
-    'Boss',
-    new Date(Date.now()),
-    'Victor',
-    'M',
-    new Date(1990, 0, 20)
-  )
+  const userProperties: UserProperties = {
+    name: 'Victor',
+    gender: 'M',
+    birthDate: new Date(1990, 0, 20),
+    email: 'email@email.com',
+    role: 'Boss',
+    lastAccess: new Date(Date.now())
+  }
+  const newUser: UserProperties = new User(userProperties)
   console.log(newUser)
 
   /*class UserSettings extends User {
