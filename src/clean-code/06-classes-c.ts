@@ -28,19 +28,18 @@
   const newPerson = new Person(personProperties) // 20 de Enero de 1990
   console.log(newPerson)
 
-  interface UserProperties extends PersonProperties {
+  interface UserProperties {
     email: string
     role: string
     lastAccess: Date
     checkCredentials?: Function
   }
 
-  class User extends Person {
+  class User {
     public email: string
     public role: string
     public lastAccess: Date
     constructor({ email, role, lastAccess }: UserProperties) {
-      super(personProperties)
       this.email = email
       this.role = role
       this.lastAccess = lastAccess
@@ -51,9 +50,6 @@
   }
 
   const userProperties: UserProperties = {
-    name: 'Victor',
-    gender: 'M',
-    birthDate: new Date(1990, 0, 20),
     email: 'email@email.com',
     role: 'Boss',
     lastAccess: new Date(Date.now())
