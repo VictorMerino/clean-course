@@ -26,7 +26,7 @@
   const newPerson = new Person(personProperties) // 20 de Enero de 1990
   console.log(newPerson)
 
-  interface UserProperties extends Person {
+  interface UserProperties extends PersonProperties {
     email: string
     role: string
     lastAccess: Date
