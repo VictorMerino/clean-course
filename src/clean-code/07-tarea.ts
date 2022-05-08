@@ -9,7 +9,7 @@
   }
 
   class InputAttributes {
-    constructor(public value: string, public placeholder: string, id: string) {}
+    constructor(public value: string, public placeholder: string) {}
   }
 
   class InputEvents {
