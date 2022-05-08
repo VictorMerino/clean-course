@@ -12,17 +12,20 @@
     constructor(public value: string, public placeholder: string) {}
   }
 
-  class InputEvents {
-    setFocus() {}
-    getValue() {}
-    isActive() {}
-    removeValue() {}
+  interface InputEvents {
+    setFocus: Function
+    getValue: Function
+    isActive: Function
+    removeValue: Function
   }
 
-  interface InputElementProperties extends HtmlElement, InputAttributes {}
+  interface InputElementProperties
+    extends HtmlElement,
+      InputAttributes,
+      InputEvents {}
 
   //? Idea para la nueva clase InputElement
-  class InputElement {
+  class InputElement implements InputAttributes, InputEvents {
     public id: string
     public placeholder: string
     public value: string
@@ -35,10 +38,23 @@
       this.id = htmlAttrs.id
       this.type = htmlAttrs.type
     }
+
+    setFocus(): void {
+      console.log('setFocus')
+    }
+    getValue(): void {
+      console.log('getValue')
+    }
+    isActive(): void {
+      console.log('isActive')
+    }
+    removeValue(): void {
+      console.log('removeValue')
+    }
   }
   // const nameField = new InputEvents('Fernando', 'Enter first name', 'txtName')
   // This should return exactly the same as before with the same input
   const nameField = new InputElement('Fernando', 'Enter first name', 'txtName')
-
+  nameField.setFocus()
   console.log({ nameField })
 })()
