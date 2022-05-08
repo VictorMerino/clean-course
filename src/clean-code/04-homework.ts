@@ -24,14 +24,19 @@
   let isThirdStepWorking = true
   let isFourthStepWorking = true
 
+  enum StepsByNumber {
+    First = 'First',
+    Second = 'Second',
+    Third = 'Third',
+    Fourth = 'Fourth'
+  }
   function workingSteps() {
-    // let messageToReturn = ``
-    if (!isFirstStepWorking) return 'First step broken.'
-    if (!isSecondStepWorking) return 'Second step broken.'
-    if (!isThirdStepWorking) return 'Third step broken.'
-    if (!isFourthStepWorking) return 'Fourth step broken.'
+    if (!isFirstStepWorking) return `${StepsByNumber.First} step broken.`
+    if (!isSecondStepWorking) return `${StepsByNumber.Second} step broken.`
+    if (!isThirdStepWorking) return `${StepsByNumber.Third} step broken.`
+    if (!isFourthStepWorking) return `${StepsByNumber.Fourth} step broken.`
 
-    return 'Working properly!'
+    return 'Working properly'
   }
 
   // isRedFruit
