@@ -1,15 +1,28 @@
 ;(() => {
   type Gender = 'M' | 'F'
 
-  class Person {
-    constructor(
-      public name: string,
-      public gender: Gender,
-      public birthDate: Date
-    ) {}
+  interface PersonProperties {
+    name: string
+    gender: Gender
+    birthDate: Date
   }
 
-  const newPerson = new Person('Victor', 'M', new Date(1990, 0, 20)) // 20 de Enero de 1990
+  class Person {
+    public name: string
+    public gender: Gender
+    public birthDate: Date
+    constructor({ name, gender, birthDate }: PersonProperties) {
+      this.name = name
+      this.gender = gender
+      this.birthDate = birthDate
+    }
+  }
+
+  const newPerson = new Person({
+    name: 'Victor',
+    gender: 'M',
+    birthDate: new Date(1990, 0, 20)
+  }) // 20 de Enero de 1990
   console.log(newPerson)
 
   class User extends Person {
@@ -39,7 +52,7 @@
   )
   console.log(newUser)
 
-  class UserSettings extends User {
+  /*class UserSettings extends User {
     constructor(
       public workingDirectory: string,
       public lastOpenFolder: string,
@@ -68,5 +81,5 @@
   console.log({
     userSettings,
     areCredentialsValid: userSettings.checkCredentials()
-  })
+  })*/
 })()
