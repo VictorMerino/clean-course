@@ -25,7 +25,7 @@
       InputEvents {}
 
   //? Idea para la nueva clase InputElement
-  class InputElement implements InputAttributes, InputEvents {
+  class InputElement implements InputElementProperties {
     public id: string
     public placeholder: string
     public value: string
