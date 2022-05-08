@@ -57,35 +57,24 @@
   const newUser: UserProperties = new User(userProperties)
   console.log(newUser)
 
-  interface UserSettingsProperties extends UserProperties {
+  interface SettingsProperties {
     workingDirectory: string
     lastOpenFolder: string
   }
-  class UserSettings extends User {
+  class UserSettings {
     public workingDirectory: string
     public lastOpenFolder: string
 
-    constructor({ workingDirectory, lastOpenFolder }: UserSettingsProperties) {
-      super(userProperties)
+    constructor({ workingDirectory, lastOpenFolder }: SettingsProperties) {
       this.workingDirectory = workingDirectory
       this.lastOpenFolder = lastOpenFolder
     }
   }
 
-  const userSettings: UserSettingsProperties = {
+  const settings: SettingsProperties = {
     workingDirectory: '/usr/home',
-    lastOpenFolder: 'home',
-    name: 'Victor',
-    gender: 'M',
-    birthDate: new Date(1990, 0, 20),
-    email: 'email@email.com',
-    role: 'Boss',
-    lastAccess: new Date(Date.now()),
-    checkCredentials: () => {}
+    lastOpenFolder: 'home'
   }
 
-  console.log({
-    userSettings,
-    areCredentialsValid: () => {}
-  })
+  console.log(settings)
 })()
