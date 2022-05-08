@@ -77,4 +77,47 @@
   }
 
   console.log(settings)
+
+  // Interface with composition
+  interface UserSettingsProperties
+    extends PersonProperties,
+      UserProperties,
+      SettingsProperties {}
+
+  // Class with composition of the three previous classes
+  class UserSettings {
+    public person: Person
+    public user: User
+    public settings: Settings
+
+    constructor({
+      workingDirectory,
+      lastOpenFolder,
+      name,
+      gender,
+      birthDate,
+      email,
+      role,
+      lastAccess
+    }: UserSettingsProperties) {
+      this.person = new Person({ name, gender, birthDate })
+      this.user = new User({ email, role, lastAccess })
+      this.settings = new Settings({ workingDirectory, lastOpenFolder })
+    }
+  }
+
+  const userSettings = new UserSettings({
+    workingDirectory: '/usr/home',
+    lastOpenFolder: 'home',
+    name: 'Victor',
+    gender: 'M',
+    birthDate: new Date(1990, 0, 20),
+    email: 'email@email.com',
+    role: 'Boss',
+    lastAccess: new Date(Date.now())
+  })
+
+  console.log(userSettings)
+  // Check credentials is a method of user:
+  console.log(userSettings.user.checkCredentials())
 })()
