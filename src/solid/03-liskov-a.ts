@@ -1,4 +1,4 @@
-import { Tesla, Audi, Toyota, Honda, Car, Brands } from './03-liskov-b'
+import { /* Tesla, Audi, Toyota, Honda, */ Car, Brands } from './03-liskov-b'
 ;(() => {
   const printCarSeats = (cars: Car[]) => {
     cars.forEach((car) => console.log(car.getNumberOfSeats()))
