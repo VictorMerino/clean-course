@@ -6,7 +6,7 @@
 
   // Usualmente, esto es una clase para controlar la vista que es desplegada al usuario
   // Recuerden que podemos tener muchas vistas que realicen este mismo trabajo.
-  class ProductBloc {
+  class ProductService {
     loadProduct(id: number) {
       // Realiza un proceso para obtener el producto y retornarlo
       console.log('Producto: ', { id, name: 'OLED Tv' })
@@ -31,12 +31,12 @@
     }
   }
 
-  const productBloc = new ProductBloc()
+  const productService = new ProductService()
   const cartService = new CartService()
   const clientNotifier = new ClientNotifier()
 
-  productBloc.loadProduct(10)
-  productBloc.saveProduct({ id: 10, name: 'OLED TV' })
+  productService.loadProduct(10)
+  productService.saveProduct({ id: 10, name: 'OLED TV' })
   clientNotifier.notifyClients()
   cartService.addToCart(10)
 })()
