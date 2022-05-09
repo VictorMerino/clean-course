@@ -8,7 +8,8 @@ import { /* Tesla, Audi, Toyota, Honda, */ Car, Brands } from './03-liskov-b'
     new Car(7, Brands.Tesla),
     new Car(2, Brands.Audi),
     new Car(5, Brands.Toyota),
-    new Car(3, Brands.Honda)
+    new Car(3, Brands.Honda),
+    new Car(2, Brands.Volvo)
   ]
 
   /* Original not refactored one:

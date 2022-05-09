@@ -2,7 +2,8 @@ export enum Brands {
   Tesla = 'Tesla',
   Audi = 'Audi',
   Toyota = 'Totota',
-  Honda = 'Honda'
+  Honda = 'Honda',
+  Volvo = 'Volvo'
 }
 
 export class Car {
