@@ -30,7 +30,16 @@ export class Honda {
   }
 }
 
-export type Brand = 'Tesla' | 'Audi' | 'Toyota' | 'Honda'
+export enum Brand {
+  Tesla = 'Tesla',
+  Audi = 'Audi',
+  Totota = 'Totota',
+  Honda = 'Honda'
+}
+
+console.log(Brand)
+// export type Brand = 'Tesla' | 'Audi' | 'Toyota' | 'Honda'
+
 export class Car {
   constructor(private numberOfSeats: number, private brand: Brand) {}
 
