@@ -1,3 +1,19 @@
+export enum Brands {
+  Tesla = 'Tesla',
+  Audi = 'Audi',
+  Toyota = 'Totota',
+  Honda = 'Honda'
+}
+
+export class Car {
+  constructor(private numberOfSeats: number, private brand: Brands) {}
+
+  getNumberOfSeats() {
+    return `${this.brand} has ${this.numberOfSeats} seats`
+  }
+}
+
+/*
 export class Tesla {
   constructor(private numberOfSeats: number) {}
 
@@ -29,21 +45,4 @@ export class Honda {
     return this.numberOfSeats
   }
 }
-
-export enum Brand {
-  Tesla = 'Tesla',
-  Audi = 'Audi',
-  Totota = 'Totota',
-  Honda = 'Honda'
-}
-
-console.log(Brand)
-// export type Brand = 'Tesla' | 'Audi' | 'Toyota' | 'Honda'
-
-export class Car {
-  constructor(private numberOfSeats: number, private brand: Brand) {}
-
-  getNumberOfSeats() {
-    return this.numberOfSeats
-  }
-}
+*/
