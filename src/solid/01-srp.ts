@@ -18,7 +18,7 @@
     }
   }
 
-  class CartBlock {
+  class CartService {
     addToCart(productId: number) {
       // Agregar al carrito de compras
       console.log('Agregando al carrito ', productId)
@@ -32,11 +32,11 @@
   }
 
   const productBloc = new ProductBloc()
-  const cartBlock = new CartBlock()
+  const cartService = new CartService()
   const clientNotifier = new ClientNotifier()
 
   productBloc.loadProduct(10)
   productBloc.saveProduct({ id: 10, name: 'OLED TV' })
   clientNotifier.notifyClients()
-  cartBlock.addToCart(10)
+  cartService.addToCart(10)
 })()
