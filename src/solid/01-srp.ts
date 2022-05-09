@@ -26,6 +26,8 @@
   }
 
   class ClientNotifier {
+    // Example of e-mail config
+    // private masterEmail: string = process.env.MASTER_EMAIL
     notifyClients() {
       console.log('Enviando correo a los clientes')
     }
