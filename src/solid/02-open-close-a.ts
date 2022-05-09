@@ -1,5 +1,5 @@
 import { PhotosService, PostService, TodoService } from './02-open-close-b'
-import { HttpClient } from './02-open-close-c'
+import { HttpClient } from './02-open-close-axios-adapter'
 ;(async () => {
   const httpClient = new HttpClient()
   const todoService = new TodoService(httpClient)
