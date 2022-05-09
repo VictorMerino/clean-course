@@ -1,5 +1,4 @@
-import { Tesla, Audi, Toyota, Honda } from './03-liskov-b'
-
+import { Tesla, Audi, Toyota, Honda, Brand } from './03-liskov-b'
 ;(() => {
   const printCarSeats = (cars: (Tesla | Audi | Toyota | Honda)[]) => {
     for (const car of cars) {

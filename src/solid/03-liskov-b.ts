@@ -29,3 +29,12 @@ export class Honda {
     return this.numberOfSeats
   }
 }
+
+export type Brand = 'Tesla' | 'Audi' | 'Toyota' | 'Honda'
+export class Car {
+  constructor(private numberOfSeats: number, private brand: Brand) {}
+
+  getNumberOfSeats() {
+    return this.numberOfSeats
+  }
+}
