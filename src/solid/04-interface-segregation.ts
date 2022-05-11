@@ -23,13 +23,20 @@ class Humminbird implements FlyingBird {
   public run() {}
 }
 
-class Ostrich implements Bird {
+class Ostrich implements SwimmingBird {
   public eat() {}
   public run() {}
   public swim() {}
 }
 
 class Penguin implements SwimmingBird {
+  public eat() {}
+  public run() {}
+  public swim() {}
+}
+
+class Duck implements SwimmingBird, FlyingBird {
+  public fly() {}
   public eat() {}
   public run() {}
   public swim() {}
