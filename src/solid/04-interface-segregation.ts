@@ -7,7 +7,7 @@ interface FlyingBird extends Bird {
 }
 
 interface RunnerBird extends Bird {
-  run(): void
+  run(): number // It has to return the speed, maybe it should be a type?
 }
 
 interface SwimmerBird extends Bird {
@@ -26,19 +26,25 @@ class Humminbird implements FlyingBird {
 
 class Ostrich implements RunnerBird, SwimmerBird {
   public eat() {}
-  public run() {}
+  public run() {
+    return 2
+  }
   public swim() {}
 }
 
 class Penguin implements RunnerBird, SwimmerBird {
   public eat() {}
-  public run() {}
+  public run() {
+    return 2
+  }
   public swim() {}
 }
 
 class Duck implements SwimmerBird, RunnerBird, FlyingBird {
   public fly() {}
   public eat() {}
-  public run() {}
+  public run() {
+    return 2
+  }
   public swim() {}
 }
