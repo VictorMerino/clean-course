@@ -1,17 +1,23 @@
 interface Bird {
-  fly?(): void
   eat(): void
   run(): void
-  swim?(): void
 }
 
-class Tucan implements Bird {
+interface FlyingBird extends Bird {
+  fly(): void
+}
+
+interface SwimmingBird extends Bird {
+  swim(): void
+}
+
+class Tucan implements FlyingBird {
   public fly() {}
   public eat() {}
   public run() {}
 }
 
-class Humminbird implements Bird {
+class Humminbird implements FlyingBird {
   public fly() {}
   public eat() {}
   public run() {}
@@ -23,7 +29,7 @@ class Ostrich implements Bird {
   public swim() {}
 }
 
-class Penguin implements Bird {
+class Penguin implements SwimmingBird {
   public eat() {}
   public run() {}
   public swim() {}
