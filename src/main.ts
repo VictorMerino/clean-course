@@ -19,7 +19,8 @@ import './code-smells/02-low-coupling' */
 // Solid Exercises:
 // import './solid/01-srp'
 // import './solid/02-open-close-a'
-import './solid/03-liskov-a'
+// import './solid/03-liskov-a'
+import './solid/04-interface-segregation'
 const app = document.querySelector<HTMLDivElement>('#app')!
 
 app.innerHTML = `
