@@ -9,13 +9,13 @@ export interface Post {
 
 export class PostService {
   private posts: Post[] = []
+  private localDatabase
 
-  constructor() {}
+  constructor(localDatabase: LocalDataBaseService) {
+    this.localDatabase = localDatabase
+  }
 
-  async getPosts() {
-    const jsonDB = new LocalDataBaseService()
-    this.posts = await jsonDB.getFakePosts()
-
-    return this.posts
+  async getPosts(): Promise<Post[]> {
+    return await this.localDatabase.getFakePosts()
   }
 }
