@@ -1,7 +1,7 @@
 import localPosts from '../data/local-database.json'
 
 export class LocalDataBaseService {
-  async getFakePosts() {
+  async getPosts() {
     return [
       {
         userId: 1,
