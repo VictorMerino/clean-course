@@ -1,7 +1,7 @@
 import localPosts from '../data/local-database.json'
 import { Post } from './05-dependency-b'
 
-interface PostProvider {
+export interface PostProvider {
   getPosts(): Promise<Post[]>
 }
 
